@@ -137,17 +137,8 @@ PRODUCT_PACKAGES += \
     LineageSetupWizard
 endif
 
-PRODUCT_PACKAGES += \
-    LineageSettingsProvider \
-    BlissUpdater
-
 PRODUCT_COPY_FILES += \
     vendor/bliss/prebuilt/common/etc/init/init.bliss-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.bliss-updater.rc
-
-# Config
-PRODUCT_PACKAGES += \
-    SimpleDeviceConfig \
-    SimpleSettingsConfig
 
 # Disable default frame rate limit for games
 PRODUCT_PRODUCT_PROPERTIES += \

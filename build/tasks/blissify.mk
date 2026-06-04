@@ -24,24 +24,19 @@ SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 blissify: $(DEFAULT_GOAL) $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(BLISS_TARGET_PACKAGE)
 	$(hide) $(SHA256) $(BLISS_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(BLISS_TARGET_PACKAGE).sha256
+	
+	@echo -e ${CL_CYN}" _______      ______     ______    ______     ______    ________   ______      "${CL_CYN}
+	@echo -e ${CL_CYN}"/______/\    /_____/\   /_____/\  /_____/\   /_____/\  /_______/\ /_____/\     "${CL_CYN}
+	@echo -e ${CL_CYN}"\::::__\/__  \:::_ \ \  \:::_ \ \ \:::_ \ \  \:::_ \ \ \__.::._\/ \:::_ \ \    "${CL_CYN}
+	@echo -e ${CL_CYN}" \:\  /____/\ \:(_) \ \  \:\ \ \ \ \:(_) ) )_ \:\ \ \ \   \::\ \   \:\ \ \ \   "${CL_CYN}
+	@echo -e ${CL_CYN}"  \:\:\_  _\/  \: ___\/   \:\ \ \ \ \: __  \ \ \:\ \ \ \  _\::\ \__ \:\ \ \ \  "${CL_CYN}
+	@echo -e ${CL_CYN}"   \:\_\ \ \    \ \ \      \:\/.:| | \ \  \ \ \ \:\_\ \ \/__\::\__/\ \:\/.:| | "${CL_CYN}
+	@echo -e ${CL_CYN}"    \_____\/     \_\/       \____/_/  \_\/ \_\/  \_____\/\________\/  \____/_/ "${CL_CYN}
+	
 	@echo -e ${CL_CYN}""${CL_CYN}
-	@echo -e ${CL_CYN}"      ___           ___                   ___           ___      "${CL_CYN}
-	@echo -e ${CL_CYN}"     /\  \         /\__\      ___        /\  \         /\  \     "${CL_CYN}
-	@echo -e ${CL_CYN}"    /::\  \       /:/  /     /\  \      /::\  \       /::\  \    "${CL_CYN}
-	@echo -e ${CL_CYN}"   /:/\:\  \     /:/  /      \:\  \    /:/\ \  \     /:/\ \  \   "${CL_CYN}
-	@echo -e ${CL_CYN}"  /::\~\:\__\   /:/  /       /::\__\  _\:\~\ \  \   _\:\~\ \  \  "${CL_CYN}
-	@echo -e ${CL_CYN}" /:/\:\ \:\__\ /:/__/     __/:/\/__/ /\ \:\ \ \__\ /\ \:\ \ \__\ "${CL_CYN}
-	@echo -e ${CL_CYN}" \:\~\:\/:/  / \:\  \    /\/:/  /    \:\ \:\ \/__/ \:\ \:\ \/__/ "${CL_CYN}
-	@echo -e ${CL_CYN}"  \:\ \::/  /   \:\  \   \::/__/      \:\ \:\__\    \:\ \:\__\   "${CL_CYN}
-	@echo -e ${CL_CYN}"   \:\/:/  /     \:\  \   \:\__\       \:\/:/  /     \:\/:/  /   "${CL_CYN}
-	@echo -e ${CL_CYN}"    \::/__/       \:\__\   \/__/        \::/  /       \::/  /    "${CL_CYN}
-	@echo -e ${CL_CYN}"     ~~            \/__/                 \/__/         \/__/     "${CL_CYN}
-	@echo -e ${CL_CYN}""${CL_CYN}
-	@echo -e ${CL_CYN}"===========-Bliss Package Complete-==========="${CL_RST}
+	@echo -e ${CL_CYN}"===========-GP Package Complete-==========="${CL_RST}
 	@echo -e ${CL_CYN}"Zip: "${CL_MAG} $(BLISS_TARGET_PACKAGE)${CL_RST}
 	@echo -e ${CL_CYN}"SHA256: "${CL_MAG}" `cat $(BLISS_TARGET_PACKAGE).sha256 | cut -d ' ' -f 1`"${CL_RST}
 	@echo -e ${CL_CYN}"Size:"${CL_MAG}" `ls -lah $(BLISS_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CL_RST}
-	@echo -e ${CL_CYN}"==============================================="${CL_RST}
-	@echo -e ${CL_CYN}"Have A Truly Blissful Experience"${CL_RST}
 	@echo -e ${CL_CYN}"==============================================="${CL_RST}
 	@echo -e ""

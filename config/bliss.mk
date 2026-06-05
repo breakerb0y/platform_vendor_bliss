@@ -22,7 +22,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 # Cloned app exemption
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/sysconfig/preinstalled-packages-platform-bliss-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/preinstalled-packages-platform-bliss-product.xml
+    vendor/gpdroid/prebuilt/common/etc/sysconfig/preinstalled-packages-platform-bliss-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/preinstalled-packages-platform-bliss-product.xml
 
 # Disable async MTE on a few processes
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
@@ -45,7 +45,7 @@ endif
 
 # Keys
 ifeq ($(BLISS_BUILDTYPE),OFFICIAL)
-include vendor/bliss-priv/keys/keys.mk
+include vendor/gpdroid-priv/keys/keys.mk
 else
--include vendor/bliss-priv/keys/keys.mk
+-include vendor/gpdroid-priv/keys/keys.mk
 endif

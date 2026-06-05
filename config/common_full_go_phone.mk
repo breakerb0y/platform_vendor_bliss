@@ -2,4 +2,4 @@
 PRODUCT_TYPE := go
 
 # Inherit full common Bliss stuff
-$(call inherit-product, vendor/bliss/config/common_full_phone.mk)
+$(call inherit-product, vendor/gpdroid/config/common_full_phone.mk)

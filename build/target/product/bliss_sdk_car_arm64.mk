@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include vendor/bliss/build/target/product/bliss_generic_car_target.mk
+include vendor/gpdroid/build/target/product/bliss_generic_car_target.mk
 
 $(call inherit-product, device/generic/car/emulator/aosp_car_emulator.mk)
 

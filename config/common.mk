@@ -1,6 +1,6 @@
 # Allow vendor/extra to override any property by setting it first
 $(call inherit-product-if-exists, vendor/extra/product.mk)
-$(call inherit-product, vendor/bliss/config/bliss.mk)
+$(call inherit-product, vendor/gpdroid/config/bliss.mk)
 $(call inherit-product, vendor/extras/bliss_packages.mk)
 
 # Allow vendor prebuilt repos to exclude themselves from bp scanning
@@ -44,18 +44,18 @@ endif
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/bliss/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/bliss/prebuilt/common/bin/50-bliss.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-bliss.sh
+    vendor/gpdroid/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/gpdroid/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/gpdroid/prebuilt/common/bin/50-bliss.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-bliss.sh
 
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/addon.d/50-bliss.sh
 
 ifneq ($(strip $(AB_OTA_PARTITIONS) $(AB_OTA_POSTINSTALL_CONFIG)),)
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
-    vendor/bliss/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
-    vendor/bliss/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
+    vendor/gpdroid/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+    vendor/gpdroid/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+    vendor/gpdroid/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/bin/backuptool_ab.sh \
@@ -68,11 +68,11 @@ endif
 
 # Bliss-specific broadcast actions whitelist
 PRODUCT_COPY_FILES += \
-    vendor/bliss/config/permissions/bliss-sysconfig.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/bliss-sysconfig.xml
+    vendor/gpdroid/config/permissions/bliss-sysconfig.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/bliss-sysconfig.xml
 
 # Bliss-specific init rc file
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/init/init.bliss-system_ext.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.bliss-system_ext.rc
+    vendor/gpdroid/prebuilt/common/etc/init/init.bliss-system_ext.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.bliss-system_ext.rc
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -92,7 +92,7 @@ PRODUCT_PACKAGES += \
 
 # This is Bliss!
 PRODUCT_COPY_FILES += \
-    vendor/bliss/config/permissions/org.lineageos.android.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/org.lineageos.android.xml
+    vendor/gpdroid/config/permissions/org.lineageos.android.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/org.lineageos.android.xml
 
 # Enforce privapp-permissions whitelist
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -100,7 +100,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 ifneq ($(TARGET_DISABLE_LINEAGE_SDK), true)
 # Lineage SDK
-include vendor/bliss/config/lineage_sdk_common.mk
+include vendor/gpdroid/config/lineage_sdk_common.mk
 endif
 
 # Do not include art debug targets
@@ -138,7 +138,7 @@ PRODUCT_PACKAGES += \
 endif
 
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/init/init.bliss-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.bliss-updater.rc
+    vendor/gpdroid/prebuilt/common/etc/init/init.bliss-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.bliss-updater.rc
 
 # Disable default frame rate limit for games
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -181,7 +181,7 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
 
 # FRP
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/bin/wipe-frp.sh:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/wipe-frp
+    vendor/gpdroid/prebuilt/common/bin/wipe-frp.sh:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/wipe-frp
 
 # Openssh
 PRODUCT_PACKAGES += \
@@ -194,7 +194,7 @@ PRODUCT_PACKAGES += \
     start-ssh
 
 PRODUCT_COPY_FILES += \
-    vendor/bliss/prebuilt/common/etc/init/init.openssh.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.openssh.rc
+    vendor/gpdroid/prebuilt/common/etc/init/init.openssh.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.openssh.rc
 
 # rsync
 PRODUCT_PACKAGES += \
@@ -250,10 +250,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
     setupwizard.theme=glif_v4 \
     setupwizard.feature.day_night_mode_enabled=true
 
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/bliss/overlay/no-rro
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/gpdroid/overlay/no-rro
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/bliss/overlay/common \
-    vendor/bliss/overlay/no-rro
+    vendor/gpdroid/overlay/common \
+    vendor/gpdroid/overlay/no-rro
 
 PRODUCT_PACKAGES += \
     DocumentsUIOverlay \
@@ -271,12 +271,12 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/crowdin/overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/crowdin/overlay
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
-    vendor/bliss/build/target/product/security/lineage
+    vendor/gpdroid/build/target/product/security/lineage
 
 # Bliss Bootanimation
--include vendor/bliss/config/bootanimation.mk
+-include vendor/gpdroid/config/bootanimation.mk
 
-include vendor/bliss/config/version.mk
+include vendor/gpdroid/config/version.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
--include vendor/bliss/config/partner_gms.mk
+-include vendor/gpdroid/config/partner_gms.mk

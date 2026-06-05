@@ -60,7 +60,7 @@
 #                                          is in PATH
 #   USE_CCACHE                         = Enable ccache (global Android flag)
 
-include vendor/bliss/build/core/utils.mk
+include vendor/gpdroid/build/core/utils.mk
 
 BUILD_TOP := $(abspath .)
 

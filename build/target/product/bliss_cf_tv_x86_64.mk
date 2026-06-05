@@ -3,7 +3,7 @@
 
 $(call inherit-product, device/google/cuttlefish/vsoc_x86_64/tv/aosp_cf.mk)
 
-include vendor/bliss/build/target/product/bliss_generic_tv_target.mk
+include vendor/gpdroid/build/target/product/bliss_generic_tv_target.mk
 
 TARGET_NO_KERNEL_OVERRIDE := true
 

@@ -14,7 +14,7 @@
 
 $(call inherit-product, device/generic/goldfish/64bitonly/product/sdk_phone64_x86_64.mk)
 
-include vendor/bliss/build/target/product/bliss_generic_target.mk
+include vendor/gpdroid/build/target/product/bliss_generic_target.mk
 include device/generic/goldfish/board/kernel/x86_64.mk
 
 # Always build modules from source

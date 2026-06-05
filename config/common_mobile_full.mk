@@ -1,5 +1,5 @@
 # Inherit common Bliss stuff
-$(call inherit-product, vendor/bliss/config/common_mobile.mk)
+$(call inherit-product, vendor/gpdroid/config/common_mobile.mk)
 
 PRODUCT_SIZE := full
 
@@ -38,5 +38,5 @@ PRODUCT_PACKAGES += \
     FontRubikOverlay
 
 # Include Bliss LatinIME dictionaries
-PRODUCT_PACKAGE_OVERLAYS += vendor/bliss/overlay/dictionaries
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/bliss/overlay/dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/gpdroid/overlay/dictionaries
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/gpdroid/overlay/dictionaries

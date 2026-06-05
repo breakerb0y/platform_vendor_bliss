@@ -14,7 +14,7 @@
 
 $(call inherit-product, device/google/atv/products/aosp_tv_x86.mk)
 
-include vendor/bliss/build/target/product/bliss_generic_tv_target.mk
+include vendor/gpdroid/build/target/product/bliss_generic_tv_target.mk
 
 PRODUCT_NAME := bliss_gsi_tv_x86
 

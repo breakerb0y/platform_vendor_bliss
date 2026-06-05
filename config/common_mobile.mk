@@ -1,12 +1,12 @@
 # Inherit common mobile Bliss stuff
-$(call inherit-product, vendor/bliss/config/common.mk)
+$(call inherit-product, vendor/gpdroid/config/common.mk)
 
 # Include AOSP audio files
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AudioPackage14.mk)
-include vendor/bliss/config/aosp_audio.mk
+include vendor/gpdroid/config/aosp_audio.mk
 
 # Include Bliss audio files
-include vendor/bliss/config/bliss_audio.mk
+include vendor/gpdroid/config/bliss_audio.mk
 
 # Default notification/alarm sounds
 PRODUCT_PRODUCT_PROPERTIES += \

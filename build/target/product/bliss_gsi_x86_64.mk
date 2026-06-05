@@ -14,7 +14,7 @@
 
 $(call inherit-product, device/generic/common/gsi_x86_64.mk)
 
-include vendor/bliss/build/target/product/bliss_generic_target.mk
+include vendor/gpdroid/build/target/product/bliss_generic_target.mk
 
 PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
 

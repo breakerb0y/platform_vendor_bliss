@@ -3,7 +3,7 @@
 
 $(call inherit-product, device/google/cuttlefish/vsoc_arm64/phone/aosp_cf.mk)
 
-include vendor/bliss/build/target/product/lineage_generic_target.mk
+include vendor/gpdroid/build/target/product/lineage_generic_target.mk
 
 TARGET_NO_KERNEL_OVERRIDE := true
 

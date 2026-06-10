@@ -1,0 +1,9 @@
+on post-fs-data
+    mkdir /data/system 0771 system system
+    start copy_display_settings
+
+service copy_display_settings /system/bin/copy_display_settings.sh
+    class late_start
+    user system
+    group system
+    oneshot

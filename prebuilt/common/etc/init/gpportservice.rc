@@ -1,0 +1,6 @@
+service gpportservice /system/bin/app_process /system/bin custom.hardware.gpportservice.GpPortDaemon
+    class main
+    user root
+    group root
+    setenv CLASSPATH /system/priv-app/gpportservice/gpportservice.apk
+    seclabel u:r:gpportservice:s0

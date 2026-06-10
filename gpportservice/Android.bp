@@ -1,0 +1,32 @@
+cc_library_shared {
+    name: "libgpportservice",
+    srcs: ["gpportservice.c"],
+    shared_libs: ["libc","liblog"],
+    stl: "none",
+    visibility: ["//visibility:public"],
+}
+
+android_app {
+    name: "gpportservice",
+
+    srcs: [
+        "custom/hardware/gpportservice/GpPortDaemon.java",
+        "custom/hardware/gpportservice/GpPortService.java",
+        "custom/hardware/gpportservice/gpportserviceJNI.java",
+        "custom/hardware/gpportservice/IGpPortService.aidl",
+    ],
+
+    certificate: "platform",
+    privileged: true,
+
+    optimize: {
+        enabled: false,
+    },
+
+    platform_apis: true,
+    sdk_version: "",
+    visibility: ["//visibility:public"],
+    jni_libs: ["libgpportservice"],
+    manifest: "AndroidManifest.xml",
+}
+

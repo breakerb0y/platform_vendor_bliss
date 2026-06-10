@@ -6,7 +6,7 @@ $(call inherit-product, vendor/extras/bliss_packages.mk)
 # Allow vendor prebuilt repos to exclude themselves from bp scanning
 -include $(sort $(wildcard vendor/*/*/exclude-bp.mk))
 
-PRODUCT_BRAND ?= Bliss
+PRODUCT_BRAND ?= GpDroid
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -137,8 +137,17 @@ PRODUCT_PACKAGES += \
     LineageSetupWizard
 endif
 
+PRODUCT_PACKAGES += \
+    LineageSettingsProvider \
+    BlissUpdater
+
 PRODUCT_COPY_FILES += \
     vendor/gpdroid/prebuilt/common/etc/init/init.bliss-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.bliss-updater.rc
+
+# Config
+PRODUCT_PACKAGES += \
+    SimpleDeviceConfig \
+    SimpleSettingsConfig
 
 # Disable default frame rate limit for games
 PRODUCT_PRODUCT_PROPERTIES += \

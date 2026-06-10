@@ -1,0 +1,38 @@
+cc_library_shared {
+    name: "libdetectposhw",
+    srcs: [
+    	"libsrc/bigpc.c",
+    	"libsrc/exotic.c",
+    	"libsrc/libdetectposhw.c" ,
+    	"libsrc/minipc.c",
+    	"libsrc/util.c",
+    	"libsrc/hwtable.c",
+    	"libsrc/poshw.c",
+    	"libsrc/virtual.c"
+    ],
+
+    local_include_dirs: [
+        "libsrc",
+        "include",
+    ],
+    
+    include_dirs: [
+    	"external/libusb/libusb",
+    ],
+    
+    shared_libs: ["libc","liblog","libusb"],
+    stl: "none",
+    visibility: ["//visibility:public"],
+}
+
+cc_binary {
+    name: "detectposhw",
+    srcs: [
+        "src/detectposhw.c",
+    ],
+    local_include_dirs: [
+        "src",
+        "include",
+    ],
+    shared_libs: ["libdetectposhw"],
+}

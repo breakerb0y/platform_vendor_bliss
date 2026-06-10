@@ -45,7 +45,7 @@ endif
 
 # Keys
 ifeq ($(BLISS_BUILDTYPE),OFFICIAL)
-include vendor/gpdroid-priv/keys/keys.mk
+include vendor/bliss-priv/keys/keys.mk
 else
--include vendor/gpdroid-priv/keys/keys.mk
+-include vendor/bliss-priv/keys/keys.mk
 endif

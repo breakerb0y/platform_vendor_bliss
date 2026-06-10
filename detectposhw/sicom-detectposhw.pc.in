@@ -1,0 +1,10 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@sicom_includedir@
+
+Name: sicom-detectposhw
+Description: Sicom DETECTPOSHW library
+Version: @VERSION@
+Libs: -L${libdir} -lsicomdetectposhw
+Cflags: -I${includedir}

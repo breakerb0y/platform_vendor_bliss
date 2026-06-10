@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<ports>
+    <port display="0" input="usb-0000:00:14.0-10.3/input0" />
+    <port display="1" input="usb-0000:00:14.0-7.2/input0" />
+</ports>

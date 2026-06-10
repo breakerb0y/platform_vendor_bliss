@@ -9,8 +9,8 @@ function check_product()
         echo "Couldn't locate the top of the tree. Try setting TOP." >&2
         return
     fi
-    if (echo -n $1 | grep -q -e "^bliss_") ; then
-        BLISS_BUILD=$(echo -n $1 | sed -e 's/^bliss_//g')
+    if (echo -n $1 | grep -q -e "^gpdroid_") ; then
+        BLISS_BUILD=$(echo -n $1 | sed -e 's/^gpdroid_//g')
     else
         BLISS_BUILD=
     fi
@@ -50,7 +50,7 @@ function blissify()
                   echo "         -m | --microg: Build with MicroG added"
 		  echo ""
 		  echo "deviceCodename: "
-		  echo "your device codename, without the 'bliss_' in front"
+		  echo "your device codename, without the 'gpdroid_' in front"
 		  echo ""
 		  ;;
 		-c | --clean)

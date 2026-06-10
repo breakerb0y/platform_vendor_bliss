@@ -1,0 +1,17 @@
+sh_binary {
+    name: "generate-touch-association",
+    src: "generate-touch-association.sh",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "input-port-associations-XENIALXC23.xml",
+    src: "input-port-associations-XENIALXC23.xml",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "input-port-associations-GC26.xml",
+    src: "input-port-associations-GC26.xml",
+    vendor: true,
+}

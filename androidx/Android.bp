@@ -1,0 +1,142 @@
+android_library_import {
+    name: "androidx_appcompat",
+    aars: ["appcompat/appcompat/1.6.1/appcompat-1.6.1.aar"],
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    visibility: ["//visibility:public"],
+}
+
+android_library_import {
+    name: "androidx_core",
+    aars: ["core/core/1.5.0/core-1.5.0.aar"],
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    visibility: ["//visibility:public"],
+}
+
+android_library_import {
+    name: "androidx_webkit",
+    aars: ["webkit/webkit/1.3.0/webkit-1.3.0.aar"],
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    visibility: ["//visibility:public"],
+}
+
+android_library_import {
+    name: "androidx_drawerlayout",
+    aars: ["drawerlayout/drawerlayout/1.1.1/drawerlayout-1.1.1.aar"],
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    visibility: ["//visibility:public"],
+}
+
+android_library_import {
+    name: "androidx_core_splashscreen",
+    aars: ["core/core-splashscreen/1.0.0/core-splashscreen-1.0.0.aar"],
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    visibility: ["//visibility:public"],
+}
+
+android_library_import {
+    name: "androidx_customview",
+    aars: ["customview/customview/1.1.0/customview-1.1.0.aar"],
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    visibility: ["//visibility:public"],
+}
+
+android_library_import {
+    name: "androidx_fragment",
+    aars: ["fragment/fragment/1.5.7/fragment-1.5.7.aar"],
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    visibility: ["//visibility:public"],
+}
+
+java_import {
+    name: "androidx_annotation",
+    jars: ["annotation/annotation/1.5.0/annotation-1.5.0.jar"],
+    sdk_version: "system_current",
+    visibility: ["//visibility:public"],
+}
+
+android_library_import {
+    name: "androidx_activity",
+    aars: ["activity/activity/1.2.0/activity-1.2.0.aar"],
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    visibility: ["//visibility:public"],
+}
+
+
+java_import {
+    name: "androidx_kotlin-stdlib",
+    jars: ["kotlin-stdlib/kotlin-stdlib/1.5.0/kotlin-stdlib-1.5.0.jar"],
+    sdk_version: "system_current",
+    visibility: ["//visibility:public"],
+}
+
+android_library_import {
+    name: "androidx_lifecycle-runtime",
+    aars: ["lifecycle/lifecycle-runtime/2.5.1/lifecycle-runtime-2.5.1.aar"],
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    visibility: ["//visibility:public"],
+}
+
+java_import {
+    name: "androidx_lifecycle-common",
+    jars: ["lifecycle/lifecycle-common/2.6.2/lifecycle-common-2.6.2.jar"],
+    sdk_version: "system_current",
+    visibility: ["//visibility:public"],
+}
+
+android_library_import {
+    name: "androidx_lifecycle-viewmodel",
+    aars: ["lifecycle/lifecycle-viewmodel/2.6.2/lifecycle-viewmodel-2.6.2.aar"],
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    visibility: ["//visibility:public"],
+}
+
+android_library_import {
+    name: "androidx_savedstate",
+    aars: ["savedstate/savedstate/1.2.1/savedstate-1.2.1.aar"],
+    sdk_version: "current",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    visibility: ["//visibility:public"],
+}

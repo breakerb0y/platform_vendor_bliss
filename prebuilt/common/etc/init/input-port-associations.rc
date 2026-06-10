@@ -1,0 +1,8 @@
+service touch_assoc /vendor/bin/generate-touch-association
+    class core
+    user root
+    group root
+    oneshot
+
+on post-fs-data
+    start touch_assoc

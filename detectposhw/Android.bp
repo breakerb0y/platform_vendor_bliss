@@ -19,7 +19,7 @@ cc_library_shared {
     include_dirs: [
     	"external/libusb/libusb",
     ],
-    
+    static_libs: ["libnativehelper_compat_libc++"],
     shared_libs: ["libc","liblog","libusb"],
     stl: "none",
     visibility: ["//visibility:public"],
@@ -34,5 +34,6 @@ cc_binary {
         "src",
         "include",
     ],
+    static_libs: ["libnativehelper_compat_libc++"],
     shared_libs: ["libdetectposhw"],
 }

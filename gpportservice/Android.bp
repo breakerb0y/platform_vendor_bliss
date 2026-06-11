@@ -1,6 +1,7 @@
 cc_library_shared {
     name: "libgpportservice",
     srcs: ["gpportservice.c"],
+    static_libs: ["libnativehelper_compat_libc++"],
     shared_libs: ["libc","liblog"],
     stl: "none",
     visibility: ["//visibility:public"],

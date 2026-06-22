@@ -193,7 +193,7 @@ function breakfast()
                 variant="userdebug"
             fi
 
-            lunch bliss_$target-$aosp_target_release-$variant
+            lunch gpdroid_$target-$aosp_target_release-$variant
         fi
     fi
     return $?
@@ -204,7 +204,7 @@ alias bib=breakfast
 function eat()
 {
     if [ "$OUT" ] ; then
-        ZIPPATH=`ls -tr "$OUT"/Bliss-*.zip | tail -1`
+        ZIPPATH=`ls -tr "$OUT"/Gpdroid-*.zip | tail -1`
         if [ ! -f $ZIPPATH ] ; then
             echo "Nothing to eat"
             return 1

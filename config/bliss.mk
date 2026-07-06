@@ -1,10 +1,7 @@
 # Bliss Packages
 PRODUCT_PACKAGES += \
-    BatteryStatsViewer \
-    GameSpace \
     LMOFreeform \
-    LMOFreeformSidebar \
-    OmniJaws
+#    LMOFreeformSidebar \
 
 # PIF values
 PRODUCT_PRODUCT_PROPERTIES += \

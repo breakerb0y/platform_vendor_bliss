@@ -32,10 +32,24 @@
 
     <bool name="def_bluetooth_on">false</bool>
 
-    <integer name="def_screen_off_timeout">30000</integer>
+    <integer name="def_screen_off_timeout">186400000</integer>
 
-    <bool name="def_screen_brightness_automatic_mode">true</bool>
+    <bool name="def_lockscreen_disabled">true</bool>
+
+    <bool name="def_stay_on_while_plugged_in">true</bool>
+
+    <bool name="def_screen_brightness_automatic_mode">false</bool>
 
     <!-- Default for Settings.System.VIBRATE_WHEN_RINGING -->
-    <bool name="def_vibrate_when_ringing">true</bool>
+    <bool name="def_vibrate_when_ringing">false</bool>
+
+    <integer name="def_lock_screen_show_notifications">0</integer>
+
+    <bool name="def_wake_gesture_enabled">false</bool>
+
+    <bool name="def_double_tap_to_wake">false</bool>
+
+    <bool name="def_notification_bubbles">false</bool>
+
+    <bool name="def_lock_screen_show_qr_code_scanner">false</bool>
 </resources>

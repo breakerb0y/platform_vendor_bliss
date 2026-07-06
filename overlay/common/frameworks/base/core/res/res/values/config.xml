@@ -682,4 +682,14 @@
 
     <!-- Name of a font family to use as regular font. For theming purpose. -->
     <string name="config_regularFontFamily" translatable="false">google-sans</string>
+
+    <!-- If supported and enabled, are dreams activated when docked? (by default) -->
+    <bool name="config_dreamsActivatedOnDockByDefault">false</bool>
+
+    <!-- If supported and enabled, are dreams activated when asleep and charging? (by default) -->
+    <bool name="config_dreamsActivatedOnSleepByDefault">false</bool>
+
+    <!-- Whether the system enables per-display focus. If the system has the input method for each
+         display, this value should be true. -->
+    <bool name="config_perDisplayFocusEnabled">true</bool>
 </resources>

@@ -133,8 +133,7 @@ endif
 
 ifeq ($(PRODUCT_IS_AUTOMOTIVE),)
 PRODUCT_PACKAGES += \
-    LineageParts \
-    LineageSetupWizard
+    LineageParts
 endif
 
 PRODUCT_PACKAGES += \
@@ -249,11 +248,6 @@ ifeq ($(TARGET_BUILD_VARIANT),userdebug)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     debug.sf.enable_transaction_tracing=false
 endif
-
-# SetupWizard
-PRODUCT_PRODUCT_PROPERTIES += \
-    setupwizard.theme=glif_v4 \
-    setupwizard.feature.day_night_mode_enabled=true
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/gpdroid/overlay/no-rro
 PRODUCT_PACKAGE_OVERLAYS += \

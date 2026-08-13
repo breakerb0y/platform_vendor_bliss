@@ -30,12 +30,18 @@ ifeq ($(TARGET_BUILD_VARIANT),eng)
 # Disable ADB authentication
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0
 else
+ifeq ($(TARGET_BUILD_VARIANT),userdebug)
+# Disable ADB authentication
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.debuggable=1
+else
 ifdef WITH_ADB_INSECURE
 # Forcibly disable ADB authentication
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0
 else
 # Enable ADB authentication
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
+endif
 endif
 
 # Disable extra StrictMode features on all non-engineering builds
@@ -121,13 +127,12 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 
 ifneq ($(TARGET_DISABLE_EPPE),true)
 # Require all requested packages to exist
-$(call enforce-product-packages-exist-internal,$(wildcard device/*/$(BLISS_BUILD)/$(TARGET_PRODUCT).mk),product_manifest.xml rild Calendar Launcher3 Launcher3Go Launcher3QuickStep Launcher3QuickStepGo android.hidl.memory@1.0-impl.vendor vndk_apex_snapshot_package)
+$(call enforce-product-packages-exist-internal,$(wildcard device/*/$(BLISS_BUILD)/$(TARGET_PRODUCT).mk),product_manifest.xml rild Launcher3 Launcher3Go Launcher3QuickStep Launcher3QuickStepGo android.hidl.memory@1.0-impl.vendor vndk_apex_snapshot_package)
 endif
 
 # Lineage packages
 ifeq ($(PRODUCT_IS_ATV),)
 PRODUCT_PACKAGES += \
-    ExactCalculator \
     Jelly
 endif
 
@@ -271,6 +276,18 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/crowdin/overlay
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/gpdroid/build/target/product/security/lineage
+
+#Gpportservice
+PRODUCT_COPY_FILES += \
+    vendor/gpdroid/prebuilt/common/etc/init/gpportservice.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/gpportservice.rc
+
+#display settings
+PRODUCT_COPY_FILES += \
+    vendor/gpdroid/prebuilt/common/etc/init/init.display_settings.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.display_settings.rc
+
+#input port associations
+PRODUCT_COPY_FILES += \
+    vendor/gpdroid/prebuilt/common/etc/init/input-port-associations.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/input-port-associations.rc
 
 # Bliss Bootanimation
 -include vendor/gpdroid/config/bootanimation.mk

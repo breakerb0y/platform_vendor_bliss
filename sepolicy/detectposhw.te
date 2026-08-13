@@ -1,0 +1,17 @@
+type detectposhw, domain;
+type detectposhw_exec, exec_type, vendor_file_type, file_type;
+
+domain_auto_trans(shell, detectposhw_exec, detectposhw)
+
+# domain_auto_trans(hal_foo_default, detectposhw_exec, detectposhw)
+
+allow detectposhw kmsg_device:chr_file rw_file_perms;
+allow detectposhw logd:unix_stream_socket connectto;
+allow detectposhw logdr_socket:sock_file write;
+
+allow detectposhw usb_device:chr_file rw_file_perms;
+allow detectposhw usb_device:dir r_dir_perms;
+allow detectposhw sysfs_usb:file r_file_perms;
+
+allow detectposhw sysfs:dir r_dir_perms;
+allow detectposhw sysfs:file r_file_perms;

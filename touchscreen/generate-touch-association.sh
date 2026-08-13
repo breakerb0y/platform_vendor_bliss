@@ -1,4 +1,7 @@
 #!/system/bin/sh
 
-MODEL=$(/system/bin/detectposhw 2>/dev/null)
+MODEL=$(/vendor/bin/detectposhw 2>/dev/null)
+
 setprop vendor.hw.model "$MODEL"
+
+settings put global device_name "$MODEL"

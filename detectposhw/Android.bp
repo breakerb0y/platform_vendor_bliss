@@ -1,39 +1,58 @@
 cc_library_shared {
     name: "libdetectposhw",
+    vendor: true,
+
     srcs: [
-    	"libsrc/bigpc.c",
-    	"libsrc/exotic.c",
-    	"libsrc/libdetectposhw.c" ,
-    	"libsrc/minipc.c",
-    	"libsrc/util.c",
-    	"libsrc/hwtable.c",
-    	"libsrc/poshw.c",
-    	"libsrc/virtual.c"
+        "libsrc/bigpc.c",
+        "libsrc/exotic.c",
+        "libsrc/libdetectposhw.c",
+        "libsrc/minipc.c",
+        "libsrc/util.c",
+        "libsrc/hwtable.c",
+        "libsrc/poshw.c",
+        "libsrc/virtual.c",
     ],
 
     local_include_dirs: [
         "libsrc",
         "include",
     ],
-    
+
     include_dirs: [
-    	"external/libusb/libusb",
+    "external/libusb/libusb",
     ],
-    static_libs: ["libnativehelper_compat_libc++"],
-    shared_libs: ["libc","liblog","libusb"],
-    stl: "none",
+
+    shared_libs: [
+        "liblog",
+        "libusb",
+    ],
+
+    static_libs: [
+        "libnativehelper_compat_libc++",
+    ],
+
     visibility: ["//visibility:public"],
 }
 
 cc_binary {
     name: "detectposhw",
+    vendor: true,
+
     srcs: [
         "src/detectposhw.c",
     ],
+
     local_include_dirs: [
         "src",
         "include",
     ],
-    static_libs: ["libnativehelper_compat_libc++"],
-    shared_libs: ["libdetectposhw"],
+
+    static_libs: [
+        "libnativehelper_compat_libc++",
+    ],
+
+    shared_libs: [
+        "libdetectposhw",
+        "liblog",
+    ],
 }

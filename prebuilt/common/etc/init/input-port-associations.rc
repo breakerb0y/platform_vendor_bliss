@@ -1,8 +1,9 @@
 service touch_assoc /vendor/bin/generate-touch-association
-    class core
+    class main
     user root
-    group root
+    group root log
     oneshot
+    disabled
 
-on post-fs-data
+on boot
     start touch_assoc

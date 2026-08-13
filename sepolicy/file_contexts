@@ -1,1 +1,3 @@
 /system/bin/app_process    u:object_r:gpportservice_exec:s0
+
+/vendor/bin/detectposhw    u:object_r:detectposhw_exec:s0

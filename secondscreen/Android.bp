@@ -1,0 +1,5 @@
+sh_binary {
+    name: "toggle-screenmode",
+    src: "toggle-screenmode.sh",
+    vendor: true,
+}

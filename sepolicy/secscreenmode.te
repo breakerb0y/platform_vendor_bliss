@@ -1,0 +1,19 @@
+type toggle_screenmode, domain;
+type toggle_screenmode_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(toggle_screenmode)
+
+allow toggle_screenmode shell_exec:file rx_file_perms;
+allow toggle_screenmode vendor_shell_exec:file rx_file_perms;
+allow toggle_screenmode toolbox_exec:file rx_file_perms;
+allow toggle_screenmode vendor_toolbox_exec:file rx_file_perms;
+
+allow toggle_screenmode sysfs:dir r_dir_perms;
+allow toggle_screenmode sysfs:file rw_file_perms;
+allow toggle_screenmode sysfs_type:dir r_dir_perms;
+allow toggle_screenmode sysfs_type:file rw_file_perms;
+
+set_prop(toggle_screenmode, vendor_sec_display_prop)
+
+allow toggle_screenmode property_socket:sock_file write;
+allow toggle_screenmode init:unix_stream_socket connectto;

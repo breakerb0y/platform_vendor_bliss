@@ -1,0 +1,7 @@
+se_policy_conf {
+    name: "vendor_sepolicy_custom_conf",
+    srcs: [
+        "*.te",
+    ],
+    vendor: true,
+}

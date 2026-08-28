@@ -285,6 +285,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/gpdroid/prebuilt/common/etc/init/init.display_settings.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.display_settings.rc
 
+#second display settings
+PRODUCT_COPY_FILES += \
+    vendor/gpdroid/prebuilt/common/etc/init/second_screen_mode.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/second_screen_mode.rc
+
 #input port associations
 PRODUCT_COPY_FILES += \
     vendor/gpdroid/prebuilt/common/etc/init/input-port-associations.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/input-port-associations.rc

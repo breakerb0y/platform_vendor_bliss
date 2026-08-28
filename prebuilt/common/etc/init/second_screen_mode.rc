@@ -1,0 +1,15 @@
+service toggle_sec_display /vendor/bin/toggle-screenmode 2
+    class main
+    user root
+    group root
+    disabled
+    oneshot
+
+on property:persist.vendor.secdisplaymode=0
+    exec_background - root root -- /vendor/bin/toggle-screenmode 0
+
+on property:persist.vendor.secdisplaymode=1
+    exec_background - root root -- /vendor/bin/toggle-screenmode 1
+
+on property:persist.vendor.secdisplaymode=2
+    exec_background - root root -- /vendor/bin/toggle-screenmode 2

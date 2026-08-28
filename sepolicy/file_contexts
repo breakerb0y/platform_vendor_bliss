@@ -1,3 +1,5 @@
 /system/bin/app_process    u:object_r:gpportservice_exec:s0
 
 /vendor/bin/detectposhw    u:object_r:detectposhw_exec:s0
+
+/vendor/bin/toggle-screenmode    u:object_r:toggle_screenmode_exec:s0
